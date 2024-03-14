@@ -1,0 +1,40 @@
+#port number
+server:
+  port: 4002
+#Application name  
+spring:
+  application:
+    name: HotelService
+#Admin server configuration    
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:1111/
+#MySQL DB
+  datasource:
+    url: jdbc:mysql://localhost:3306/MicroServices
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver   
+  jpa:
+    hibernate:
+      ddl-auto: update 
+    show-sql: true
+#Eureka server (no need for this configuration for 8761 port)
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true #by default true
+    fetch-registry: true #by default true
+  instance:
+    prefer-ip-address: true #by dafault false       
+    
+    
+    
+    
+    
+    
+    
+    
